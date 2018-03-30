@@ -20,8 +20,8 @@
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url({{ site.author_image | prepend: site.baseurl }})">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ site.author }}</h4>
-              on
-              <time datetime="{{ page.date | date: "%F %R" }}">{{ page.date | date_to_string }}</time>
+              le 
+              <time datetime="{% assign m = page.date | date: "%-m" %}{{ page.date | date: "%-d" }} {% case m %}{% when '1' %}Janvier{% when '2' %}Février{% when '3' %}Mars{% when '4' %}Avril{% when '5' %}Mai{% when '6' %}Juin{% when '7' %}Juillet{% when '8' %}Août{% when '9' %}Septembre{% when '10' %}Octobre{% when '11' %}Novembre{% when '12' %}Décembre{% endcase %} {{ page.date | date: "%Y" }}">{% assign m = page.date | date: "%-m" %}{{ page.date | date: "%-d" }} {% case m %}{% when '1' %}Janvier{% when '2' %}Février{% when '3' %}Mars{% when '4' %}Avril{% when '5' %}Mai{% when '6' %}Juin{% when '7' %}Juillet{% when '8' %}Août{% when '9' %}Septembre{% when '10' %}Octobre{% when '11' %}Novembre{% when '12' %}Décembre{% endcase %} {{ page.date | date: "%Y" }}</time>
               <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
             </div>
             <div style="text-align:center">
@@ -36,8 +36,8 @@
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url({{ site.author_image | prepend: site.baseurl }})">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ page.author }}</h4>
-              on
-              <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+              le
+              <time datetime="{{ page.date | date_to_xmlschema }}">{% assign m = page.date | date: "%-m" %}{{ page.date | date: "%-d" }} {% case m %}{% when '1' %}Janvier{% when '2' %}Février{% when '3' %}Mars{% when '4' %}Avril{% when '5' %}Mai{% when '6' %}Juin{% when '7' %}Juillet{% when '8' %}Août{% when '9' %}Septembre{% when '10' %}Octobre{% when '11' %}Novembre{% when '12' %}Décembre{% endcase %} {{ page.date | date: "%Y" }}</time>
               <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
             </div>
           </div>
@@ -67,23 +67,23 @@
         </footer>
         <div class="bottom-teaser cf">
           <div class="isLeft">
-            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <h5 class="index-headline featured"><span>Écrit par</span></h5>
             <section class="author">
               <div class="author-image" style="background-image: url({{site.author_image | prepend: site.baseurl}})">Blog Logo</div>
               <h4>{{ site.author }}</h4>
               <p class="bio">{{author.bio}}</p>
               <hr>
-              <p class="published">Published <time datetime="{{ page.date | date: "%F %R" }}">{{ page.date | date_to_string }}</time></p>
+              <p class="published">Publié le <time datetime="{{ page.date | date: "%F %R" }}"> {% assign m = page.date | date: "%-m" %}{{ page.date | date: "%-d" }} {% case m %}{% when '1' %}Janvier{% when '2' %}Février{% when '3' %}Mars{% when '4' %}Avril{% when '5' %}Mai{% when '6' %}Juin{% when '7' %}Juillet{% when '8' %}Août{% when '9' %}Septembre{% when '10' %}Octobre{% when '11' %}Novembre{% when '12' %}Décembre{% endcase %} {{ page.date | date: "%Y" }}</time></p>
             </section>
           </div>
           {{/post}}
           <div class="isRight">
-            <h5 class="index-headline featured"><span>Supported by</span></h5>
+            <h5 class="index-headline featured"><span>Supporté par</span></h5>
             <footer class="site-footer">
-              <section class="poweredby">Proudly published with <a href="http://jekyllrb.com"> Jekyll</a></section>
-              <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <section class="poweredby">Publié grâce à <a href="http://jekyllrb.com"> Jekyll</a></section>
+              <a class="subscribe" href="{{ "/feed.xml" | prepend: site.baseurl }}"> <span class="tooltip"> <i class="fa fa-rss"></i> Vous pouvez souscrire à mon flux.</span></a>
               <div class="inner">
-                <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{site.author}}</a> &copy; {{ site.time | date: '%Y' }}<br>All rights reserved.</section>
+                <section class="copyright"><a href="mailto:{{ site.email}}">{{ site.name }}</a> &copy; {{ site.time | date: '%Y' }} &bull; <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></section>
               </div>
             </footer>
           </div>
@@ -112,7 +112,7 @@
       <div class="inner">
         <h1 class="blog-title">{{ site.title }}</h1>
         <h2 class="blog-description">{{ site.description }}</h2>
-        <a href={{ "/" | prepend: site.baseurl }} class="btn">Back to Overview</a>
+        <a href={{ "/" | prepend: site.baseurl }} class="btn">Retour à l'accueil</a>
       </div>
     </div>
     {% include javascripts.html %}

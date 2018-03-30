@@ -29,32 +29,6 @@ layout: default
 
 
 <main class="content" role="main">
-
-    {% if site.tags.featured %}
-    <h5 class="index-headline featured"><span>Featured</span></h5>
-
-    <div class="container featured">
-      {% for post in site.tags.featured %}
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">{{ post.title }}</a></h2>
-            </header>
-            <section class="post-excerpt" itemprop="description">
-              <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-  <!--            <span class="post-tags-set">on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span>-->
-            </div>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-
-    <h5 class="index-headline normal"><span>Regular</span></h5>
-    {% endif %}
-
     <div class="cf frame">
       {% for post in paginator.posts %}
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
@@ -66,7 +40,7 @@ layout: default
               <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
             </section>
             <div class="post-meta">
-              <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
+              <time datetime="{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%-d" }} {% case m %}{% when '1' %}Janvier{% when '2' %}Février{% when '3' %}Mars{% when '4' %}Avril{% when '5' %}Mai{% when '6' %}Juin{% when '7' %}Juillet{% when '8' %}Août{% when '9' %}Septembre{% when '10' %}Octobre{% when '11' %}Novembre{% when '12' %}Décembre{% endcase %} {{ post.date | date: "%Y" }}">{% assign m = post.date | date: "%-m" %}{{ post.date | date: "%-d" }} {% case m %}{% when '1' %}Janvier{% when '2' %}Février{% when '3' %}Mars{% when '4' %}Avril{% when '5' %}Mai{% when '6' %}Juin{% when '7' %}Juillet{% when '8' %}Août{% when '9' %}Septembre{% when '10' %}Octobre{% when '11' %}Novembre{% when '12' %}Décembre{% endcase %} {{ post.date | date: "%Y" }}</time>
 <!--            <span class="post-tags-set">on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span>-->
             </div>
           </div>
