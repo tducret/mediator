@@ -50,7 +50,14 @@ social:
 
   - icon:	github
     url:	https://github.com/tducret
-    desc:	Fork me on github
+    desc:	Fork me on Github
+    share_url:
+    share_title:
+    share_link:
+
+  - icon:	linkedin
+    url:	https://www.linkedin.com/in/thibaultducret
+    desc:	Restons en contact sur Linkedin
     share_url:
     share_title:
     share_link:

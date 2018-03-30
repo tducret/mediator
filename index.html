@@ -23,7 +23,7 @@ layout: default
             &nbsp;&nbsp;·&nbsp;&nbsp;
         {% endif %}
       {% endfor %}
-      <a href={{ "/about/" | prepend: site.baseurl }}>About</a>
+      <a href={{ "/a-propos/" | prepend: site.baseurl }}>À propos</a>
     </div>
 </header>
 
@@ -76,14 +76,14 @@ layout: default
 
     <nav class="pagination" role="navigation">
       {% if paginator.next_page %}
-        <a class="newer-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.next_page }}>&larr; Older posts</a>
+        <a class="newer-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.next_page }}>&larr; Articles plus anciens</a>
       {% endif %}
       <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
       {% if paginator.previous_page %}
         {% if paginator.page == 2 %}
-          <a class="older-posts" href={{ "/" | prepend: site.baseurl }}>Newer posts &rarr;</a>
+          <a class="older-posts" href={{ "/" | prepend: site.baseurl }}>Articles plus récents &rarr;</a>
         {% else %}
-          <a class="older-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.previous_page }}>Newer posts &rarr;</a>
+          <a class="older-posts" href={{ "/page" | prepend: site.baseurl | append: paginator.previous_page }}>Articles plus récents &rarr;</a>
         {% endif %}
       {% endif %}
     </nav>
