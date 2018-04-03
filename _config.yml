@@ -4,9 +4,9 @@ gems:
   - jekyll-paginate
 
 # Site settings
-title: "tducret.com"
+title: "Thibault Ducret"
 description: > # this means to ignore newlines until "email:"
-   Blog personnel de Thibault Ducret
+   Simplifiez-vous la vie... une ligne de commande à la fois
 
 email: hello@tducret.com 
 
@@ -36,19 +36,19 @@ baseurl: ""
 
 # social icons and sharing options
 social:
-#  - icon:	twitter
-#    url:	https://twitter.com/dirkfabisch
-#    desc: Follow me on twitter
-#    share_url: http://twitter.com/share
-#    share_title: ?text=
-#    share_link: "&amp;url="
+  - icon:	twitter
+    url:	#https://twitter.com/dirkfabisch
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: "?text="
+    share_link: "&amp;url="
 
-#  - icon:	facebook
-#    url:	https://facebook.com/???
-#    desc: Connect with me facebook
-#    share_url: https://www.facebook.com/sharer.php
-#    share_title: ?t=
-#    share_link: "&amp;u="
+  - icon:	facebook
+    url:	#https://facebook.com/???
+    desc: Connect with me facebook
+    share_url: https://www.facebook.com/sharer.php
+    share_title: "?t="
+    share_link: "&amp;u="
 
   - icon:	github
     url:	https://github.com/tducret
@@ -60,13 +60,20 @@ social:
   - icon:	linkedin
     url:	https://www.linkedin.com/in/thibaultducret
     desc:	Restons en contact sur Linkedin
-    share_url:
-    share_title:
-    share_link:
+    share_url: http://www.linkedin.com/shareArticle?mini=true
+    share_title: "&amp;title="
+    share_link: "&amp;url="
 
-#  - icon:	google-plus
-#    url:	https://google.com/???
-#    desc:	Add me on google+
-#    share_url:
-#    share_title:
-#    share_link:
+  - icon:	google-plus
+    url:	#https://google.com/???
+    desc:	Add me on google+
+    share_url: https://plus.google.com/share
+    share_title:
+    share_link: "?url="
+    
+  - icon:	reddit
+    url:	#https://reddit.com/???
+    desc:	Reddit
+    share_url: http://www.reddit.com/submit
+    share_title: "?title="
+    share_link: "&amp;url="
