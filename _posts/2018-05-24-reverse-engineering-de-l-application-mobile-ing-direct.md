@@ -7,8 +7,6 @@ tags: scraping banque charles
 image: /assets/article_images/2018-05-24-reverse-engineering-de-l-application-mobile-ing-direct/banque.jpg
 ---
 
-## Introduction
-
 Depuis quelques années, je note régulièrement sur une feuille Excel le solde de chacun de mes comptes bancaires. Je ne récupère pas tout l'historique des opérations, juste le montant disponible ce jour-là. Cela me permet de suivre l'évolution de nos économies.
 Cette tâche peut prendre du temps car nous avons des comptes dans différentes banques (comptes courants, plan d'épargne entreprise, PEA...). Je le fais donc tous les 6 mois environ.
 
@@ -28,7 +26,7 @@ Cela permettra aussi de le faire plus régulièrement.
 
 Plusieurs services existent sur le web pour suivre l'état de ses comptes, avec des notifications, des graphes... On peut penser à [Linxo](https://www.linxo.com/) notamment. Malheureusement, je me retrouve toujours avec quelques comptes qui ne peuvent être synchronisés. La banque n'étant pas encore reconnue par Linxo (cf. [liste des banques reconnues](https://www.linxo.com/decouvrir/liste-banques/)). L'envoi des codes de connexion de ses comptes bancaires à des sites tiers peut également être un frein pour certains.
 
-## Scraping : kézako?
+# Scraping : kézako?
 
 Le scraping, c'est l'art de récupérer des informations automatiquement sur des pages web. Par exemple, vous réalisez un script qui permet d'extraire la météo dans votre ville, en récupérant les infos dans le code HTML du site meteofrance.fr.
 
@@ -40,7 +38,7 @@ Pour ce projet, je commence par la récupération des informations de mes compte
 Je choisis la deuxième option car l'utilisation des interfaces de programmation (API) des applications mobiles est plus performant que l'extraction d'informations dans des pages HTML. Le volume de données échangées est en effet beaucoup plus faible que celui contenu dans une page HTML.
 Cependant, certaines de ces API ne sont pas documentées. C'est le cas ici pour ING. Il faut alors faire de la [rétro-ingénierie](https://fr.wikipedia.org/wiki/R%C3%A9tro-ing%C3%A9nierie) (ou reverse engineering) pour découvrir leur fonctionnement. Ça tombe bien, c'est un exercice qui me passionne!
 
-## Charles : l'outil ultime pour savoir ce que raconte votre mobile
+# Charles : l'outil ultime pour savoir ce que raconte votre mobile
 
 ![Charles Proxy](/assets/article_images/2018-05-24-reverse-engineering-de-l-application-mobile-ing-direct/charles-macosx.png)
 
@@ -57,13 +55,13 @@ Voici les étapes déroulées pour découvrir l'API non officielle d'ING Direct 
 5) Récupération des requêtes et réponses dans Charles
 6) Compréhension de la logique des échanges en observant les requêtes et leurs paramètres
 
-### Modélisation des échanges Mobile ⟷ ING Direct
+## Modélisation des échanges Mobile ⟷ ING Direct
 
 Voici le diagramme de séquences qui illustre la succession des échanges entre mon mobile et les serveurs ING Direct lors de la consultation de mes comptes.
 
 ![Diagramme de séquences mobile/ING](/assets/article_images/2018-05-24-reverse-engineering-de-l-application-mobile-ing-direct/diagramme_sequences_ING.png)
 
-## Création d'un package Python et d'une commande
+# Création d'un package Python et d'une commande
 
 A partir de ces découvertes, je peux reproduire le comportement de l'application mobile avec du code Python. Je crée alors un package dédié (**ingdirect**, disponible sur [pip](https://pypi.org/project/ingdirect/)), ainsi qu'une commande `ing` pour interroger très simplement ses comptes bancaires en ligne de commande.
 
