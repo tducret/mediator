@@ -95,6 +95,8 @@ Compte Courant XXXX 1234;1500,5€
 Livret A XXXX 3456;10000,0€
 ```
 
+![Well done](https://media.giphy.com/media/Mp4hQy51LjY6A/giphy.gif)
+
 **MISSION ACCOMPLIE!**
 
 N'hésitez pas à ajouter une étoile au projet Github si cela vous a plu ([★ → ingdirect-python](https://github.com/tducret/ingdirect-python))
