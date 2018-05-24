@@ -28,12 +28,12 @@ Plusieurs services existent sur le web pour suivre l'état de ses comptes, avec 
 
 # Scraping : kézako?
 
-Le scraping, c'est l'art de récupérer des informations automatiquement sur des pages web. Par exemple, vous réalisez un script qui permet d'extraire la météo dans votre ville, en récupérant les infos dans le code HTML du site meteofrance.fr.
+> Le scraping, c'est l'art de récupérer des informations automatiquement sur des pages web. Par exemple, vous réalisez un script qui permet d'extraire la météo dans votre ville, en récupérant les infos dans le code HTML du site meteofrance.fr.
 
 Pour ce projet, je commence par la récupération des informations de mes comptes chez ING Direct. Pour cela, deux options s'offrent à moi :
 
-1) le scraping via la page web HTML ingdirect.fr
-2) reproduire les échanges de l'application mobile ING Direct
+1. le scraping via la page web HTML ingdirect.fr
+2. reproduire les échanges de l'application mobile ING Direct
 
 Je choisis la deuxième option car l'utilisation des interfaces de programmation (API) des applications mobiles est plus performant que l'extraction d'informations dans des pages HTML. Le volume de données échangées est en effet beaucoup plus faible que celui contenu dans une page HTML.
 Cependant, certaines de ces API ne sont pas documentées. C'est le cas ici pour ING. Il faut alors faire de la [rétro-ingénierie](https://fr.wikipedia.org/wiki/R%C3%A9tro-ing%C3%A9nierie) (ou reverse engineering) pour découvrir leur fonctionnement. Ça tombe bien, c'est un exercice qui me passionne!
@@ -48,12 +48,12 @@ Charles permet de créer un proxy sur votre PC, sur lequel votre smartphone va s
 
 Voici les étapes déroulées pour découvrir l'API non officielle d'ING Direct :
 
-1) Configuration du proxy sur mon smartphone : je mets l'IP de mon PC dans le proxy du WiFi (plus d'infos [ici](https://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration/))
-2) Lancement de Charles sur mon PC en mode proxy
-3) Installation du certificat SSL de Charles sur mon smartphone, pour pouvoir visualiser dans Charles les requêtes HTTPS (plus d'infos [ici](https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/))
-4) Utilisation de l'application ING sur mon smartphone : login, consultation des comptes, déconnexion
-5) Récupération des requêtes et réponses dans Charles
-6) Compréhension de la logique des échanges en observant les requêtes et leurs paramètres
+1. Configuration du proxy sur mon smartphone : je mets l'IP de mon PC dans le proxy du WiFi (plus d'infos [ici](https://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration/))
+2. Lancement de Charles sur mon PC en mode proxy
+3. Installation du certificat SSL de Charles sur mon smartphone, pour pouvoir visualiser dans Charles les requêtes HTTPS (plus d'infos [ici](https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/))
+4. Utilisation de l'application ING sur mon smartphone : login, consultation des comptes, déconnexion
+5. Récupération des requêtes et réponses dans Charles
+6. Compréhension de la logique des échanges en observant les requêtes et leurs paramètres
 
 ## Modélisation des échanges Mobile ⟷ ING Direct
 
@@ -90,6 +90,7 @@ Nom du compte;Solde
 Compte Courant XXXX 1234;1500,5€
 Livret A XXXX 3456;10000,0€
 ```
+
 
 ![Well done](https://media.giphy.com/media/Mp4hQy51LjY6A/giphy.gif)
 
