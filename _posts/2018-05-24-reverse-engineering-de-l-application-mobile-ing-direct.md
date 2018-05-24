@@ -7,8 +7,6 @@ tags: scraping banque charles
 image: /assets/article_images/2018-05-24-reverse-engineering-de-l-application-mobile-ing-direct/banque.jpg
 ---
 
-# Reverse engineering de l'application mobile ING Direct
-
 ## Introduction
 
 Depuis quelques années, je note régulièrement sur une feuille Excel le solde de chacun de mes comptes bancaires. Je ne récupère pas tout l'historique des opérations, juste le montant disponible ce jour-là. Cela me permet de suivre l'évolution de nos économies.
