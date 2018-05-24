@@ -4,7 +4,7 @@ title: Reverse engineering de l'application mobile ING Direct
 date: 2018-05-24 07:30:00
 categories: scraping
 tags: scraping banque charles
-image: banque.jpg
+image: /assets/article_images/2018-05-24-reverse-engineering-de-l'application-mobile-ing-direct/banque.jpg
 ---
 
 # Reverse engineering de l'application mobile ING Direct
@@ -44,7 +44,7 @@ Cependant, certaines de ces API ne sont pas documentées. C'est le cas ici pour 
 
 ## Charles : l'outil ultime pour savoir ce que raconte votre mobile
 
-![Charles Proxy](charles-macosx.png)
+![Charles Proxy](/assets/article_images/2018-05-24-reverse-engineering-de-l'application-mobile-ing-direct/charles-macosx.png)
 
 Pour connaitre l'API de consultation des comptes d'ING Direct, je dois visualiser les échanges entre mon smartphone et les serveurs d'ING. Il existe un outil parfait pour cette tâche : [Charles](https://www.charlesproxy.com/). Il est disponible sur Windows/Mac/Linux, avec une version d'essai gratuite parfaitement fonctionnelle.
 
@@ -63,7 +63,7 @@ Voici les étapes déroulées pour découvrir l'API non officielle d'ING Direct 
 
 Voici le diagramme de séquences qui illustre la succession des échanges entre mon mobile et les serveurs ING Direct lors de la consultation de mes comptes.
 
-![Diagramme de séquences mobile/ING](diagramme_sequences_ING.png)
+![Diagramme de séquences mobile/ING](/assets/article_images/2018-05-24-reverse-engineering-de-l'application-mobile-ing-direct/diagramme_sequences_ING.png)
 
 ## Création d'un package Python et d'une commande
 
