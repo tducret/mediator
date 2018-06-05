@@ -106,7 +106,7 @@ Le code source est plus synthétique. On retrouve notamment la note et le nombre
 <div class="a-icon-row a-size-small"><i class="a-icon a-icon-star-medium a-star-medium-4-5"><span class="a-icon-alt">4.3 out of 5 stars</span></i><span> (142)</span></div>
 ```
 
-##  La création de l'outil `amazon2csv`
+##  La création de l'outil amazon2csv
 
 Le besoin est clair, la faisabilité semble validée, c'est le moment de développer l'outil.
 Je décide de produire une sortie au format CSV, car on pourra ainsi utiliser Excel pour trier ou filtrer les résultats.
@@ -167,4 +167,4 @@ amazon2csv -u "https://www.amazon.fr/s/ref=sr_nr_p_n_feature_sixteen__11?fst=as%
 
 ![Thriller](https://media.giphy.com/media/ofEEPYCz2ZOog/giphy.gif)
 
-N'hésitez pas à ajouter une étoile au projet Github si cela vous a plu ([★ → ingdirect-python](https://github.com/tducret/ingdirect-python))
+N'hésitez pas à ajouter une étoile au projet Github si cela vous a plu ([★ → amazon-scraper-python](https://github.com/tducret/amazon-scraper-python))
