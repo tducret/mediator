@@ -1,6 +1,6 @@
 ---
 layout: post
-title: amazon2csv : ou comment filtrer les produits d'Amazon dans Excel
+title: amazon2csv, ou comment filtrer les produits d'Amazon dans Excel
 date: 2018-06-05 07:30:00
 categories: scraping
 tags: scraping amazon csv
@@ -164,3 +164,7 @@ amazon2csv -u "https://www.amazon.fr/s/ref=sr_nr_p_n_feature_sixteen__11?fst=as%
 ```
 
 ![Top 100 thrillers](/assets/article_images/2018-06-05-amazon2csv-ou-comment-filtrer-les-produits-d-amazon-dans-excel/top_100_thrillers.png)
+
+![Thriller](https://media.giphy.com/media/ofEEPYCz2ZOog/giphy.gif)
+
+N'hésitez pas à ajouter une étoile au projet Github si cela vous a plu ([★ → ingdirect-python](https://github.com/tducret/ingdirect-python))
