@@ -77,3 +77,10 @@ social:
     share_url: http://www.reddit.com/submit
     share_title: "?title="
     share_link: "&amp;url="
+
+  - icon: envelope-o
+    url:  http://bit.ly/newsletter-tducret
+    desc: Newsletter
+    share_url: 
+    share_title:
+    share_link:
