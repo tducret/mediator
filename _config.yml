@@ -1,10 +1,10 @@
 # Build settings
-markdown: kramdown
+
+highlighter: rouge
 kramdown:
   input: GFM
-  hard_wrap: false
 
-gems:
+plugins:
   - jemoji
   - jekyll-paginate
 
@@ -19,6 +19,8 @@ lang: "fr"
 #blog logo
 logo: "/assets/images/logo_td.png"
 float_logo: true # true, false (default)
+
+timezone: UTC
 
 # blog cover
 cover: "/assets/images/background_coding.jpg"
