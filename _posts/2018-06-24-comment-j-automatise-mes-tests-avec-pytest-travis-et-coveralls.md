@@ -7,26 +7,26 @@ tags: test pytest doctest travis coveralls
 image: /assets/article_images/2018-06-24-comment-j-automatise-mes-tests-avec-pytest-travis-et-coveralls/couverture.jpg
 ---
 
-Lorsque l'on code un projet en Python, on peut avoir tendance à se focaliser sur le développement des fonctionnalités.
+Lorsque l'on crée un projet en Python, on peut avoir tendance à se focaliser sur le développement des fonctionnalités.
 
 - J'ai un objectif,
-- je réfléchis aux fonctions à coder,
+- je réfléchis aux fonctions à écrire,
 - je les code,
-- je teste,
-- je modifie mon code,
-- et je continue jusqu'à avoir le fonctionnement souhaité.
+- je les teste,
+- je modifie ce qui pose problème,
+- et je continue jusqu'à avoir le comportement souhaité.
 
-Le problème avec cette approche, c'est qu'en reprenant le code quelques semaines ou mois plus tard, on ne se souvient plus de certains détails de notre code. On continue, on fait évoluer le code... et **CRAC**. Ça ne fonctionne plus comme avant 😭
+Le problème avec cette approche, c'est qu'en reprenant le code quelques semaines ou mois plus tard, on ne se souvient plus de certains détails du contenu. On continue, on fait des évolutions... et **CRAC**. Ça ne fonctionne plus comme avant 😭
 
-**D'où vient le problème?**
+**D'où vient le problème ?**
 
-Il va falloir reprendre pas-à-pas le fonctionnement du programme, fonction après fonction, paramètre d'entrée après paramètre d'entrée, ligne après ligne...
+Il va falloir analyser pas-à-pas le déroulement du programme, fonction après fonction, paramètre d'entrée après paramètre d'entrée, ligne après ligne...
 
 Au mieux, avec un debugger ([pdb](https://docs.python.org/3/library/pdb.html) en Python). Au pire, en faisant des **print** à des endroits stratégiques (je le sais, je fais pareil !).
 
 La tentation est alors grande de jeter l'éponge si le problème est vraiment complexe.
 
-Je vais vous expliquer dans cet article comment améliorer la maintenabilité de votre code. Ou dit différemment, vous faciliter la vie!
+Je vais vous expliquer dans cet article comment améliorer la maintenabilité de votre code. Ou dit différemment, vous faciliter la vie !
 
 Vous apprendrez comment ajouter des tests à votre projet, qui seront joués automatiquement lors d'une modification de votre code. Vous pourrez ainsi détecter la moindre régression, au plus vite.
 En fin d'article, vous pourrez même vérifier le taux de couverture de vos tests. C'est-à-dire le pourcentage de lignes de code par lesquels passent vos tests.
@@ -237,7 +237,7 @@ Plus d'infos sur [la documentation Travis](https://docs.travis-ci.com/user/getti
 Un dernier point à regarder de près quand on fait des tests : la couverture de code.
 Il s'agit d'analyser par quelles lignes passent vos tests... et par quelles lignes ils ne passent pas.
 On fait alors un rapport entre le nombre de lignes *couvertes* et le nombre de lignes total.
-On obtient un pourcentage : le taux de couverture de code, qui donne une une indication sur la qualité des tests sur le projet.
+On obtient un pourcentage : le taux de couverture de code, qui donne une indication sur la qualité des tests sur le projet.
 Un projet avec 50% de taux de couverture de code donne une mauvaise image, car les tests mis en place passent seulement par la moitié des lignes de code. On risque de garder de nombreux morceaux de code obsolètes, sans le savoir, jusqu'au jour où...
 
 On peut faire cette analyse très facilement avec **pytest** et le plugin **pytest-cov**.
@@ -315,4 +315,4 @@ On parle alors de **mock**, mais cela fera l'objet d'un autre article :)
 
 ![Test successful](https://media.giphy.com/media/vq4q4LqJv3Qcg/giphy.gif)
 
-Si vous ne voulez manquer aucun article, soyez notifiez directement dans votre boite mail [en vous inscrivant à la newsletter](http://bit.ly/newsletter-tducret)
+Si vous ne voulez manquer aucun article, soyez notifié directement dans votre boite mail [en vous inscrivant à la newsletter](http://bit.ly/newsletter-tducret)
