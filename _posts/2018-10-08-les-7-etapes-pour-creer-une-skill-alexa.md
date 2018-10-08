@@ -346,3 +346,5 @@ N'hésitez pas à tester [Bus Toulouse](https://www.amazon.fr/gp/product/B07HFC8
 ---
 
 Retour à la [📖 table des matières](#-table-des-matières)
+
+Si vous ne voulez manquer aucun article, soyez notifié directement dans votre boite mail [en vous inscrivant à la newsletter](http://bit.ly/newsletter-tducret)
