@@ -30,7 +30,7 @@ name: 'Thibault Ducret'
 author: 'Thibault Ducret'
 author_image: "/assets/images/thibault_ducret.jpg"
 
-paginate:	5
+paginate:	20
 
 url: "https://www.tducret.com" # the base hostname & protocol for your site
 baseurl: ""
