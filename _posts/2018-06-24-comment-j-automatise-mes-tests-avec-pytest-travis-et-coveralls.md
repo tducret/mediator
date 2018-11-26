@@ -129,6 +129,57 @@ On se place ensuite dans le répertoire du projet, et on lance la commande `pyte
 
 ![Résultat de la commande pytest](/assets/article_images/2018-06-24-comment-j-automatise-mes-tests-avec-pytest-travis-et-coveralls/pytest_test_amazonscraper_get_products_with_keywords.png)
 
+## Mock
+
+*(ajouté le 26/11/2018)*
+
+[`Mock`](https://docs.python.org/dev/library/unittest.mock.html) est un moyen très pratique de tester des fonctions nécessitant des appels à d'autres librairies ou API. Celui-ci **imite** cette fonction en la remplaçant par une fonction de votre choix.
+
+Voici un exemple (récupéré [ici](https://rhodesmill.org/brandon/slides/2014-07-pyohio/clean-architecture/)) qui remplace la requête vers un serveur web (ici une recherche de définition via l'API de DuckDuckGo) par une fonction interne qui renvoie une définition de notre choix.
+
+La fonction originale à tester :
+
+```python
+import requests
+
+def find_definition(word):
+    q = 'define ' + word
+    url = 'http://api.duckduckgo.com/?'
+    url += urlencode({'q': q, 'format': 'json'})
+    response = requests.get(url)     # <== On va imiter cette fonction
+    data = response.json()           # <== ainsi que celle-ci
+    definition = data[u'Definition']
+    if definition == u'':
+        raise ValueError('that is not a word')
+    return definition
+```
+
+Le test :
+
+```python
+from mock import patch
+
+class FakeRequestsLibrary(object):
+    def get(self, url):
+        self.url = url
+        return self
+    def json(self):
+        return self.data
+
+def test_find_definition():
+    fake = FakeRequestsLibrary()
+    fake.data = {u'Definition': u'abc'}
+    with patch('requests.get', fake.get):  # <== On la remplace ici
+        definition = find_definition('testword')
+
+    assert definition == 'abc'
+    assert fake.url == (
+        'http://api.duckduckgo.com/'
+        '?q=define+testword&format=json')
+```
+
+> Cette possibilité de test sera particulièrement utile quand vous souhaiterez tester la logique de votre application sans dépendre d'un appel à une API externe (qui pourrait aussi allonger la durée du test).
+
 ## Doctest
 
 En plus des tests dans un fichier dédié (du type `test_*.py`), on peut écrire des tests directement dans le code.
@@ -305,9 +356,7 @@ Après chaque commit sur Github, Travis va installer le code, exécuter tous mes
 ![Lignes non couvertes sur Coveralls](/assets/article_images/2018-06-24-comment-j-automatise-mes-tests-avec-pytest-travis-et-coveralls/coveralls_lignes_non_couvertes.png)
 
 Dans mon cas, il s'agit d'un cas bien particulier : la gestion d'une exception en cas d'échec de communication SSL avec les serveurs d'Amazon. C'est donc difficile à tester de manière automatique (car ça n'est pas systématique).
-On peut néanmoins simuler ce comportement pour les tests.
-
-On parle alors de **mock**, mais cela fera l'objet d'un autre article :)
+On peut néanmoins simuler ce comportement pour les tests à l'aide de [**Mock**](#mock).
 
 ![Badges sur Github](/assets/article_images/2018-06-24-comment-j-automatise-mes-tests-avec-pytest-travis-et-coveralls/badges_github.png)
 
